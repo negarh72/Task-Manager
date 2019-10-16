@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./bs/css/bootstrap.css">
+    <title>Document</title>
+    <style>
+        .hide {
+            display: none;
+        }
+        
+        .green {
+            color: green;
+        }
+        
+        .red {
+            color: red;
+        }
+        
+        .yellow {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div id="output"></div>
+            </div>
+            <div class="col-6 mt-4">
+
+                <button type="button" class="btn btn-secondary" id="status">First Click Here to See the Status of Each Task</button>
+                <br> <br>
+                <button type="button" class="btn btn-danger" id="delete">delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./handlebars.js"></script>
+    <script type="text/handlebars-template" id="task-template">
+        {{#each this}}
+        <!-- <div class="bg-danger p-2 mt-4 rounded " style="color:white;"> -->
+        <div class="bg-info p-2 mt-4 rounded ">
+            <input type="checkbox" class="c mr-2" data-id="{{@index}}"><span>{{title}}</span>
+        </div>
+        {{/each}}
+    </script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
